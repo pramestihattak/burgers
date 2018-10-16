@@ -1,7 +1,7 @@
 package models
 
 type Menu struct {
-	Id    int    `json:"id"`
-	Name  string `json:"name"`
-	Price int    `json:"price"`
+	IdMenu int    `json:"id_menu"`
+	Name   string `json:"name"`
+	Price  int    `json:"price"`
 }

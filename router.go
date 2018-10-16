@@ -17,7 +17,8 @@ func (router *router) InitRouter() *chi.Mux {
 	menuController := ServiceContainer().InjectMenuController()
 
 	r := chi.NewRouter()
-	r.HandleFunc("/menus", menuController.GetAllMenu)
+	r.HandleFunc("/menus", menuController.AllMenu)
+	r.HandleFunc("/menu/{id}/receipt", menuController.MenuReceipt)
 
 	return r
 }
