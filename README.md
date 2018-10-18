@@ -38,8 +38,9 @@ Untuk melakukan testing:
 	http://localhost:6969/order
 	
 # References
- https://irahardianto.github.io/service-pattern-go/
- https://medium.com/@imantumorang/golang-clean-archithecture-efd6d7c43047
+
+  1. https://irahardianto.github.io/service-pattern-go/
+  2. https://medium.com/@imantumorang/golang-clean-archithecture-efd6d7c43047
 
 # License
 
