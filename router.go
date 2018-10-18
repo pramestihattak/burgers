@@ -15,10 +15,13 @@ type router struct{}
 func (router *router) InitRouter() *chi.Mux {
 
 	menuController := ServiceContainer().InjectMenuController()
+	orderController := ServiceContainer().InjectOrderController()
 
 	r := chi.NewRouter()
-	r.HandleFunc("/menus", menuController.AllMenu)
-	r.HandleFunc("/menu/{id}/receipt", menuController.MenuReceipt)
+	r.Get("/menus", menuController.AllMenu)
+	r.Get("/menu/{id}/receipt", menuController.MenuReceipt)
+
+	r.Post("/order", orderController.Order)
 
 	return r
 }

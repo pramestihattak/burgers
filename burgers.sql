@@ -149,10 +149,10 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `orders` (
-  `id_orders` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `id_order` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `buyer_name` varchar(255) DEFAULT NULL,
   `total_price` int(11) DEFAULT NULL,
-  `id_discount` int(11) DEFAULT NULL,
+  `id_discount` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id_orders`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

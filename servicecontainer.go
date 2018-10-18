@@ -15,6 +15,7 @@ import (
 
 type IServiceContainer interface {
 	InjectMenuController() controllers.MenuController
+	InjectOrderController() controllers.OrderController
 }
 
 type kernel struct{}
@@ -35,6 +36,24 @@ func (k *kernel) InjectMenuController() controllers.MenuController {
 	menuController := controllers.MenuController{menuService}
 
 	return menuController
+}
+
+func (k *kernel) InjectOrderController() controllers.OrderController {
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
+	sqlConn, _ := sql.Open("mysql", os.Getenv("MYSQL_HOST"))
+	DBHandler := &infrastructures.MySQLHandler{}
+	DBHandler.Conn = sqlConn
+
+	orderRepository := &repositories.OrderRepository{DBHandler}
+	orderService := &services.OrderService{orderRepository}
+	orderController := controllers.OrderController{orderService}
+
+	return orderController
 }
 
 var (

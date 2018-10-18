@@ -12,8 +12,13 @@ type SQLiteHandler struct {
 	Conn *sql.DB
 }
 
-func (handler *SQLiteHandler) Execute(statement string) {
-	handler.Conn.Exec(statement)
+func (handler *SQLiteHandler) Execute(statement string) (sql.Result, error) {
+	res, err := handler.Conn.Exec(statement)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
 }
 
 func (handler *SQLiteHandler) Query(statement string) (interfaces.IRow, error) {

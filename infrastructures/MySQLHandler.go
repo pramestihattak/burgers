@@ -12,8 +12,13 @@ type MySQLHandler struct {
 	Conn *sql.DB
 }
 
-func (handler *MySQLHandler) Execute(statement string) {
-	handler.Conn.Exec(statement)
+func (handler *MySQLHandler) Execute(statement string) (sql.Result, error) {
+	res, err := handler.Conn.Exec(statement)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
 }
 
 func (handler *MySQLHandler) Query(statement string) (interfaces.IRow, error) {

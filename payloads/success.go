@@ -21,3 +21,8 @@ type MenuReceipt struct {
 	Menu    models.Menu             `json:"menu"`
 	Receipt []models.MenuIngredient `json:"menu_receipt"`
 }
+
+type SuccessOrder struct {
+	Code     int          `json:"code"`
+	Response models.Order `json:"response"`
+}
