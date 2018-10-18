@@ -21,8 +21,7 @@ Untuk melakukan testing:
 
 # Run
 
-> go build
-> ./burgers
+> go build && ./burgers
 
 # Endpoints
 
@@ -35,7 +34,7 @@ Untuk melakukan testing:
     curl \
 	--header "Content-Type: application/json" \
 	--request POST \
-	--data '{"buyer_name": "Pramesti Hatta K.", "id_discount": 	"GOPHER", "orders": [{ "id_menu": 1}, {"id_menu": 1}, {"id_menu": 2}]}'\
+	--data '{"buyer_name": "Pramesti Hatta K.", "id_discount": "GOPHER", "orders": [{ "id_menu": 1}, {"id_menu": 1}, {"id_menu": 2}]}'\
 	http://localhost:6969/order
 
 # License
