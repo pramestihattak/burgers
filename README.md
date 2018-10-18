@@ -1,4 +1,4 @@
-# burgers!
+# burgers! 
 
 Penerapan clean architecture dengan depedency injection pada Golang dengan studi kasus membuat aplikasi burger keliling. Aplikasi burger ini merupakan aplikasi POS untuk abang-abang burger keliling yang membutuhkan sebuah aplikasi untuk merekap penjualannya serta merekam jumlah persediaan bumbu-bumbu yang di pakai untuk berjualan burger. Dont take it too seriously :)
 
