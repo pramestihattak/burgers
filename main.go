@@ -1,9 +1,12 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 )
 
 func main() {
-	http.ListenAndServe(":6969", ChiRouter().InitRouter())
+	port := ":6969"
+	fmt.Printf("Server started on port: %s\n", port)
+	http.ListenAndServe(port, Router().Init())
 }

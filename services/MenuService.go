@@ -13,7 +13,7 @@ func (service *MenuService) GetMenu(idMenu int) (models.Menu, error) {
 
 	menu, err := service.FetchMenu(idMenu)
 	if err != nil {
-		//Handle error
+		return models.Menu{}, err
 	}
 
 	return menu, nil
@@ -23,7 +23,7 @@ func (service *MenuService) GetMenus() ([]models.Menu, error) {
 
 	menus, err := service.FetchAllMenu()
 	if err != nil {
-		//Handle error
+		return []models.Menu{}, err
 	}
 
 	return menus, nil
@@ -33,7 +33,7 @@ func (service *MenuService) GetMenuReceipt(idMenu int) ([]models.MenuIngredient,
 
 	menuIngredients, err := service.FetchMenuIngredients(idMenu)
 	if err != nil {
-		//Handle error
+		return []models.MenuIngredient{}, err
 	}
 
 	return menuIngredients, nil
