@@ -1,6 +1,6 @@
-# burgers!
+# burgers! 
 
-Penerapan clean code dengan depedency injection pada Golang dengan studi kasus membuat aplikasi burger keliling. Aplikasi burger ini merupakan aplikasi POS untuk abang-abang burger keliling yang membutuhkan sebuah aplikasi untuk merekap penjualannya serta merekam jumlah persediaan bumbu-bumbu yang di pakai untuk berjualan burger. Dont take it too seriously :)
+Penerapan clean architecture dengan depedency injection pada Golang dengan studi kasus membuat aplikasi burger keliling. Aplikasi burger ini merupakan aplikasi POS untuk abang-abang burger keliling yang membutuhkan sebuah aplikasi untuk merekap penjualannya serta merekam jumlah persediaan bumbu-bumbu yang di pakai untuk berjualan burger. Dont take it too seriously :)
 
 
 # Setup
@@ -21,8 +21,7 @@ Untuk melakukan testing:
 
 # Run
 
-> go build
-> ./burgers
+> go build && ./burgers
 
 # Endpoints
 
@@ -35,8 +34,13 @@ Untuk melakukan testing:
     curl \
 	--header "Content-Type: application/json" \
 	--request POST \
-	--data '{"buyer_name": "Pramesti Hatta K.", "id_discount": 	"GOPHER", "orders": [{ "id_menu": 1}, {"id_menu": 1}, {"id_menu": 2}]}'\
+	--data '{"buyer_name": "Pramesti Hatta K.", "id_discount": "GOPHER", "orders": [{ "id_menu": 1}, {"id_menu": 1}, {"id_menu": 2}]}'\
 	http://localhost:6969/order
+	
+# References
+
+  1. https://irahardianto.github.io/service-pattern-go/
+  2. https://medium.com/@imantumorang/golang-clean-archithecture-efd6d7c43047
 
 # License
 
