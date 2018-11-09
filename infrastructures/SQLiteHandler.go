@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
-	"github.com/VanaraID/clean-architecture/interfaces"
+	"github.com/opam22/burgers/interfaces"
 	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
 
